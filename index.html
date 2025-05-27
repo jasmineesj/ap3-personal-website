@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AP3 ICT</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: #FFF2F2;
+    }
+
+    section {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #welcome h1 {
+      font-size: 64px;
+      margin-bottom: 10px;
+      color: #7886C7;
+    }
+
+    #welcome p {
+      font-size: 20px;
+      margin-bottom: 40px;
+      font-weight: bold;
+    }
+
+    .scroll-button {
+      background-color: #7886C7;
+      color: #FFF2F2;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .scroll-button:hover {
+      background-color: #2D336B;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 20px;
+    }
+
+    .button-group button {
+      background-color: #7886C7;
+      border: none;
+      color: #FFF2F2;
+      padding: 12px 24px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .button-group button:hover {
+      background-color: #2D336B;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    img {
+      width: 200px;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      text-align: left;
+      display: inline-block;
+    }
+
+    h1, h3 {
+      color: #7886C7;
+    }
+
+    .nav-bottom {
+      margin-top: 20px;
+    }
+
+    .nav-bottom button {
+      margin: 0 10px;
+      background-color: #7886C7;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .nav-bottom button:hover {
+      background-color: #2D336B;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Halaman Welcome -->
+<section id="welcome">
+  <h1>AP3 ICT</h1>
+  <p>Jasmine 8C/11</p>
+  <a href="#menu"><button class="scroll-button">Scroll ke Bawah</button></a>
+</section>
+
+<!-- Halaman Pilihan Menu -->
+<!-- Halaman Pilihan Menu -->
+<section id="menu">
+  <div class="button-group">
+    <button onclick="showPage('profil')">Profil Saya</button>
+    <button onclick="location.href='karakter.html'">Karakter Favorit</button>
+  </div>
+  <br><br>
+</section>
+
+
+<!-- Halaman Profil -->
+<section id="profil" style="display: none;">
+  <div class="container">
+    <h1>Profil Saya</h1>
+    <img src="foto.jpeg" alt="Foto Saya" />
+    <h3>Biografi Singkat</h3>
+    <ul>
+      <li>Nama: Jasmine Sarah Jo</li>
+      <li>Kelas/No. Absen: 8C/11</li>
+      <li>Sekolah: Santa Laurensia Alam Sutera</li>
+      <li>Umur: 14 tahun</li>
+      <li>Tinggi: 161 cm</li>
+      <li>Berat badan: 42 kg</li>
+      <li>MBTI: ISFP</li>
+      <li>Ulang tahun: 21 Maret 2011</li>
+    </ul>
+    <div class="nav-bottom">
+  <button onclick="goBack()">Kembali ke Menu</button>
+  <button onclick="location.href='karakter.html'">Karakter Favorit</button>
+</div>
+
+  </div>
+</section>
+
+<script>
+
+  function scrollToHome() {
+    document.getElementById('welcome').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function showPage(pageId) {
+    document.getElementById('welcome').style.display = 'none';
+    document.getElementById('menu').style.display = 'none';
+    document.getElementById('profil').style.display = 'flex';
+  }
+
+  function goBack() {
+    document.getElementById('welcome').style.display = 'none';
+    document.getElementById('menu').style.display = 'flex';
+    document.getElementById('profil').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
+
+
